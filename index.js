@@ -103,10 +103,13 @@ function Airplane(name) {
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. Simple function call
-    2. Implicit Binding
-    3. Explicit Binding
-    4. The 'new' Keyword Binding  
+    1. Window Binding means that the value of 'this' will be the window or console Object.
+
+    2. Implicit Binding means that when a dot is used to call a function the object before the dot is the 'this'.
+
+    3. Explicit Binding is defining 'this' by using .call, or .apply to invoke the function and using bind to pass in arguments but does not immediately invoke the function but returns a brand new to be invoked later. 
+
+    4. The 'new' keyword binding uses the 'new' keyword to construct a new object for 'this' to use and when a function is invoked as a constructor function using the 'new' keyword 'this' points to the new object. 
   */
   
   
