@@ -39,8 +39,22 @@ function Airplane(name) {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- function Person() {
+ function Person(name, age) {
     
+    this.name = name
+    this.age = age
+  }
+  Person.prototype.eat = function(eat, food) {
+    const stomach = []
+    
+    if(food === 10) {
+      
+      return `can eat up to 10 foods`  
+    } else if (food > 10) {
+      return `can eat no more than 10 foods `
+      
+    }
+    return stomach.push(food)
   }
  
  
@@ -63,11 +77,19 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
-    
+ function Car(model, milesPerGallon, tank, odometer) {
+    this.model = model
+    this.milesPerGallon = milesPerGallon
+    this.tank = tank
+    this.odometer = odometer
   }
-  
-  
+  Car.prototype.fill = function(gallons) {
+
+  };
+  Car.prototype.drive = function(distance) {
+
+  }
+
   /*
     TASK 3
       - Write a Baby constructor subclassing Person.
@@ -75,11 +97,19 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
+ function Baby(name, age, favToy) {
+   this.name = name
+   this.age = age
+   this.favToy = favToy
+   this.isPlaying = true
    
   }
- 
-  
+  Person.prototype.play = function() {
+    if (this.isPlaying = true) {
+
+    return `Playing with ${favToy}`
+  }
+}
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
