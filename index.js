@@ -18,8 +18,7 @@ function Airplane(name) {
   Airplane.prototype.land = function () {
     this.isFlying = false;
   };
-  
-  
+   
   /*
   // 👇 COMPLETE YOUR WORK BELOW 👇
   // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -39,30 +38,23 @@ function Airplane(name) {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- function Person(name, age) {
-    
-    this.name = name
-    this.age = age
+  function Person(name, age) {
+    this.stomach = [];
+    this.name = name;
+    this.age = age;
   }
-  Person.prototype.eat = function(eat, food) {
-    const stomach = []
-    
-    if(food === 10) {
-      
-      return `can eat up to 10 foods`  
-    } else if (food > 10) {
-      return `can eat no more than 10 foods `
-      
+  Person.prototype.eat = function (food) {
+    if (this.stomach.length < 10) {
+      this.stomach.push(food);
     }
-    return stomach.push(food)
+  };
+  Person.prototype.poop = function () {
+    this.stomach = [];  
   }
- 
- 
+  Person.prototype.toString = function () {
+    return `${this.name}, ${this.age}`;
+  };
 
-  
-  
-  
-  
   /*
     TASK 2
       - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
@@ -77,18 +69,17 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car(model, milesPerGallon, tank, odometer) {
-    this.model = model
-    this.milesPerGallon = milesPerGallon
-    this.tank = tank
-    this.odometer = odometer
+ function Car(model, milesPerGallon) {
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
   }
   Car.prototype.fill = function(gallons) {
-
+    this.tank = this.tank += gallons;
   };
-  Car.prototype.drive = function(distance) {
-
-  }
+  let chevrolet = new Car(`Chevrolet`, 29);
+  console.log(chevrolet)
 
   /*
     TASK 3
@@ -97,26 +88,25 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby(name, age, favToy) {
-   this.name = name
-   this.age = age
-   this.favToy = favToy
-   this.isPlaying = true
-   
-  }
-  Person.prototype.play = function() {
-    if (this.isPlaying = true) {
 
-    return `Playing with ${favToy}`
+ function Baby(name, age, favoriteToy) {
+   this.name = name;
+   this.age = age;
+   this.favoriteToy = favoriteToy;   
   }
-}
+  Baby.prototype = Object.create(Person.prototype);
+  Baby.prototype.play = function () {
+
+   return `Playing with ${this.favoriteToy}`;
+  };
+
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. Simple function call
+    2. Implicit Binding
+    3. Explicit Binding
+    4. The 'new' Keyword Binding  
   */
   
   
