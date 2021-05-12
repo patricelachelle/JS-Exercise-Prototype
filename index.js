@@ -79,8 +79,20 @@ function Airplane(name) {
     this.tank = this.tank += gallons;
   };
   let chevrolet = new Car(`Chevrolet`, 29);
-  console.log(chevrolet)
+  console.log(chevrolet);
 
+  Car.prototype.drive = function(distance) {
+    this.tank = this.tank += milesPerGallon 
+    this.odometer = this.odometer += distance
+    
+    }
+  Car.prototype.toString = function () {
+    if(this.tank === 0) {
+      return `I ran out of fuel at ${this.odometer} miles!`
+  }
+}
+
+  
   /*
     TASK 3
       - Write a Baby constructor subclassing Person.
